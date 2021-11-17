@@ -1,10 +1,11 @@
 import { downIcon, upIcon } from "../../assets";
 import { Row } from "../../styles/LayoutStyles";
-import { CapitalizedText, LargeText, Text } from "../../styles/TextStyles";
-import { CardContainer, Icon } from "./styles";
+import { CapitalizedText, LargeTitle, Text } from "../../styles/TextStyles";
+import { CardBorder, CardContainer } from "./styles";
 
 type SocialMediaCardProps = {
   icon: string;
+  color: string;
   displayName: string;
   totalAmount: string;
   amountName: string;
@@ -13,6 +14,7 @@ type SocialMediaCardProps = {
 
 const SocialMediaCard: React.FC<SocialMediaCardProps> = ({
   icon,
+  color,
   displayName,
   totalAmount,
   amountName,
@@ -20,24 +22,30 @@ const SocialMediaCard: React.FC<SocialMediaCardProps> = ({
 }) => {
   return (
     <CardContainer>
-      <Row>
-        <Icon src={icon} />
+      <CardBorder color={color} />
+
+      <Row className="social-media-row">
+        <img src={icon} />
         <Text>{displayName}</Text>
       </Row>
-      <LargeText>{totalAmount}</LargeText>
+      <LargeTitle>{totalAmount}</LargeTitle>
       <CapitalizedText>{amountName}</CapitalizedText>
 
-      {amountDayBalance > 0 ? (
-        <Row>
-          <img src={upIcon} />
-          {amountDayBalance}
-        </Row>
-      ) : (
-        <Row>
-          <img src={downIcon} />
-          {Math.abs(amountDayBalance)} Today
-        </Row>
-      )}
+      <Row className="day-balance-row">
+        {amountDayBalance > 0 ? (
+          <>
+            <img src={upIcon} />
+            <Text className="positive-balance">{amountDayBalance}</Text>
+          </>
+        ) : (
+          <>
+            <img src={downIcon} />
+            <Text className="negative-balance">
+              {Math.abs(amountDayBalance)} Today
+            </Text>
+          </>
+        )}
+      </Row>
     </CardContainer>
   );
 };

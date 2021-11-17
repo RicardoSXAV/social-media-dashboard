@@ -1,7 +1,11 @@
-import { ToggleContainer } from "./styles";
+import { ToggleCircle, ToggleContainer } from "./styles";
 
 const Toggle: React.FC = () => {
-  return <ToggleContainer></ToggleContainer>;
+  return (
+    <ToggleContainer>
+      <ToggleCircle />
+    </ToggleContainer>
+  );
 };
 
 export default Toggle;
