@@ -1,7 +1,14 @@
 export const COLORS = {
   limeGreen: "hsl(163, 72%, 41%)",
   brightRed: "hsl(356, 69%, 56%)",
+
   white: "hsl(0, 0%, 100%)",
+  veryDarkBlue: "hsl(230, 17%, 14%)",
+  darkDesaturatedBlue: "hsl(228, 28%, 20%)",
+  desaturatedBlue: "hsl(228, 34%, 66%)",
+  veryPaleBlue: "hsl(225, 100%, 98%)",
+  lightGrayishBlue: "hsl(227, 47%, 96%)",
+  darkGrayishBlue: "hsl(228, 12%, 44%)",
 
   facebook: "hsl(208, 92%, 53%)",
   twitter: "hsl(203, 89%, 53%)",
