@@ -10,6 +10,7 @@ type SocialMediaCardProps = {
   totalAmount: string;
   amountName: string;
   amountDayBalance: number;
+  darkMode?: boolean;
 };
 
 const SocialMediaCard: React.FC<SocialMediaCardProps> = ({
@@ -19,16 +20,17 @@ const SocialMediaCard: React.FC<SocialMediaCardProps> = ({
   totalAmount,
   amountName,
   amountDayBalance,
+  darkMode,
 }) => {
   return (
-    <CardContainer>
+    <CardContainer darkMode={darkMode}>
       <CardBorder color={color} />
 
       <Row className="social-media-row">
         <img src={icon} />
         <Text>{displayName}</Text>
       </Row>
-      <LargeTitle>{totalAmount}</LargeTitle>
+      <LargeTitle darkMode={darkMode}>{totalAmount}</LargeTitle>
       <CapitalizedText>{amountName}</CapitalizedText>
 
       <Row className="day-balance-row">

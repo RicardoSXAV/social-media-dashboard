@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { COLORS } from "../../constants/colors";
+import { DarkModeProps } from "../../types/DarkModeProps";
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.div<DarkModeProps>`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -10,7 +11,8 @@ export const CardContainer = styled.div`
   padding: 1.5rem;
   user-select: none;
 
-  background-color: ${COLORS.lightGrayishBlue};
+  background-color: ${(props) =>
+    props.darkMode ? COLORS.darkDesaturatedBlue : COLORS.lightGrayishBlue};
   border-radius: 10px;
 
   &:hover {

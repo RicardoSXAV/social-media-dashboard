@@ -1,19 +1,23 @@
 import { Text, Title } from "../../styles/TextStyles";
 import { HomeContainer, Row } from "./styles";
 
-import Toggle from "../../components/Toggle";
+import { useTheme } from "../../contexts/ThemeContext";
 import { informationList, socialMediaList } from "../../data/socialMedia";
+
+import Toggle from "../../components/Toggle";
 import SocialMediaCard from "../../components/SocialMediaCard";
 import InformationCard from "../../components/InformationCard";
 
 const Home: React.FC = () => {
+  const { darkMode, setDarkMode } = useTheme();
+
   return (
-    <HomeContainer>
+    <HomeContainer darkMode={darkMode}>
       <Row className="home-title-row">
-        <Title>Social Media Dashboard</Title>
-        <Row>
+        <Title darkMode={darkMode}>Social Media Dashboard</Title>
+        <Row className="theme-row">
           <Text>Dark Mode</Text>
-          <Toggle />
+          <Toggle toggled={darkMode} setToggled={setDarkMode} />
         </Row>
       </Row>
 
@@ -21,15 +25,17 @@ const Home: React.FC = () => {
 
       <Row className="home-card-list">
         {socialMediaList.map((socialMedia) => (
-          <SocialMediaCard {...socialMedia} />
+          <SocialMediaCard {...socialMedia} darkMode={darkMode} />
         ))}
       </Row>
 
-      <Title className="home-overview">Overview - Today</Title>
+      <Title className={darkMode ? "" : "home-overview"} darkMode={darkMode}>
+        Overview - Today
+      </Title>
 
       <Row className="home-card-list">
         {informationList.map((information) => (
-          <InformationCard {...information} />
+          <InformationCard {...information} darkMode={darkMode} />
         ))}
       </Row>
     </HomeContainer>

@@ -8,6 +8,7 @@ type InformationCardProps = {
   amount: string;
   icon: string;
   balance: number;
+  darkMode?: boolean;
 };
 
 const InformationCard: React.FC<InformationCardProps> = ({
@@ -15,16 +16,17 @@ const InformationCard: React.FC<InformationCardProps> = ({
   amount,
   icon,
   balance,
+  darkMode,
 }) => {
   return (
-    <CardContainer>
+    <CardContainer darkMode={darkMode}>
       <Row className="information-row">
         <Text>{name}</Text>
         <img src={icon} />
       </Row>
 
       <Row className="information-row">
-        <Title>{amount}</Title>
+        <Title darkMode={darkMode}>{amount}</Title>
         <Row className="information-balance-row">
           {balance > 0 ? (
             <>

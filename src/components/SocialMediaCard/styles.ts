@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { COLORS } from "../../constants/colors";
+import { DarkModeProps } from "../../types/DarkModeProps";
 
-export const CardContainer = styled.button`
+export const CardContainer = styled.button<DarkModeProps>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -10,8 +11,9 @@ export const CardContainer = styled.button`
   width: 240px;
   padding: 2rem 4rem;
 
-  background-color: ${COLORS.lightGrayishBlue};
-  border-radius: 10px;
+  background-color: ${(props) =>
+    props.darkMode ? COLORS.darkDesaturatedBlue : COLORS.lightGrayishBlue};
+  border-radius: 5px 5px 10px 10px;
 
   &:hover {
     cursor: pointer;
@@ -48,7 +50,7 @@ type CardBorderProps = {
 
 export const CardBorder = styled.div<CardBorderProps>`
   position: absolute;
-  top: 0;
+  top: -1px;
 
   width: 100%;
   height: 0.3rem;

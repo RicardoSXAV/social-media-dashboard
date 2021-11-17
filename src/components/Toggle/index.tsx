@@ -1,9 +1,17 @@
 import { ToggleCircle, ToggleContainer } from "./styles";
 
-const Toggle: React.FC = () => {
+type ToggleProps = {
+  toggled: boolean;
+  setToggled: (state: boolean) => void;
+};
+
+const Toggle: React.FC<ToggleProps> = ({ toggled, setToggled }) => {
   return (
-    <ToggleContainer>
-      <ToggleCircle />
+    <ToggleContainer toggled={toggled} onClick={() => setToggled(!toggled)}>
+      <ToggleCircle
+        toggled={toggled}
+        className={toggled ? "toggle-circle" : ""}
+      />
     </ToggleContainer>
   );
 };

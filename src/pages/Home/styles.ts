@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { COLORS } from "../../constants/colors";
+import { DarkModeProps } from "../../types/DarkModeProps";
 
-export const HomeContainer = styled.div`
+export const HomeContainer = styled.div<DarkModeProps>`
   display: flex;
   flex-direction: column;
 
@@ -10,10 +11,15 @@ export const HomeContainer = styled.div`
   padding: 2rem 8rem 4rem 8rem;
 
   overflow-x: hidden;
+  background: ${(props) => props.darkMode && COLORS.veryDarkBlue};
 
   .home-title-row {
     width: 100%;
     justify-content: space-between;
+
+    .theme-row {
+      gap: 1rem;
+    }
   }
 
   .home-overview {
