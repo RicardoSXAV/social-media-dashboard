@@ -15,7 +15,8 @@ export const LargeTitle = styled.h1<DarkModeProps>`
 export const Text = styled.p<DarkModeProps>`
   font-size: 0.9rem;
   font-weight: 700;
-  color: ${COLORS.darkGrayishBlue};
+  color: ${(props) =>
+    props.darkMode ? COLORS.desaturatedBlue : COLORS.darkGrayishBlue};
 `;
 
 export const CapitalizedText = styled.p<DarkModeProps>`

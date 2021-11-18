@@ -10,6 +10,14 @@ export const HomeContainer = styled.div<DarkModeProps>`
   height: 100%;
   padding: 2rem 8rem 4rem 8rem;
 
+  @media (max-width: 760px) {
+    padding: 2rem 4rem 4rem 4rem;
+  }
+
+  @media (max-width: 632px) {
+    padding: 2rem;
+  }
+
   overflow-x: hidden;
   background: ${(props) => props.darkMode && COLORS.veryDarkBlue};
 
@@ -17,8 +25,18 @@ export const HomeContainer = styled.div<DarkModeProps>`
     width: 100%;
     justify-content: space-between;
 
+    @media (max-width: 568px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     .theme-row {
       gap: 1rem;
+
+      @media (max-width: 568px) {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
   }
 
@@ -29,7 +47,7 @@ export const HomeContainer = styled.div<DarkModeProps>`
   .home-card-list {
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.5rem;
 
     width: 100%;
     padding: 3rem 0;
@@ -39,4 +57,12 @@ export const HomeContainer = styled.div<DarkModeProps>`
 export const Row = styled.div`
   display: flex;
   align-items: center;
+`;
+
+export const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  margin: 1rem 0;
+
+  background-color: ${COLORS.darkGrayishBlue};
 `;

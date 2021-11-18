@@ -11,6 +11,10 @@ export const CardContainer = styled.div<DarkModeProps>`
   padding: 1.5rem;
   user-select: none;
 
+  @media (max-width: 568px) {
+    width: 100%;
+  }
+
   background-color: ${(props) =>
     props.darkMode ? COLORS.darkDesaturatedBlue : COLORS.lightGrayishBlue};
   border-radius: 10px;

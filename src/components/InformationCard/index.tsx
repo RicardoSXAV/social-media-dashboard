@@ -21,8 +21,8 @@ const InformationCard: React.FC<InformationCardProps> = ({
   return (
     <CardContainer darkMode={darkMode}>
       <Row className="information-row">
-        <Text>{name}</Text>
-        <img src={icon} />
+        <Text darkMode={darkMode}>{name}</Text>
+        <img src={icon} alt="social-media-icon" />
       </Row>
 
       <Row className="information-row">
@@ -30,13 +30,17 @@ const InformationCard: React.FC<InformationCardProps> = ({
         <Row className="information-balance-row">
           {balance > 0 ? (
             <>
-              <img src={upIcon} />
-              <Text className="positive-balance">{balance}%</Text>
+              <img src={upIcon} alt="up-icon" />
+              <Text className="positive-balance" darkMode={darkMode}>
+                {balance}%
+              </Text>
             </>
           ) : (
             <>
-              <img src={downIcon} />
-              <Text className="negative-balance">{Math.abs(balance)}%</Text>
+              <img src={downIcon} alt="down-icon" />
+              <Text className="negative-balance" darkMode={darkMode}>
+                {Math.abs(balance)}%
+              </Text>
             </>
           )}
         </Row>

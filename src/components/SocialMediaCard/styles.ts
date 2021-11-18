@@ -11,6 +11,10 @@ export const CardContainer = styled.button<DarkModeProps>`
   width: 240px;
   padding: 2rem 4rem;
 
+  @media (max-width: 568px) {
+    width: 100%;
+  }
+
   background-color: ${(props) =>
     props.darkMode ? COLORS.darkDesaturatedBlue : COLORS.lightGrayishBlue};
   border-radius: 5px 5px 10px 10px;

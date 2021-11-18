@@ -27,8 +27,8 @@ const SocialMediaCard: React.FC<SocialMediaCardProps> = ({
       <CardBorder color={color} />
 
       <Row className="social-media-row">
-        <img src={icon} />
-        <Text>{displayName}</Text>
+        <img src={icon} alt="social-media-icon" />
+        <Text darkMode={darkMode}>{displayName}</Text>
       </Row>
       <LargeTitle darkMode={darkMode}>{totalAmount}</LargeTitle>
       <CapitalizedText>{amountName}</CapitalizedText>
@@ -36,13 +36,15 @@ const SocialMediaCard: React.FC<SocialMediaCardProps> = ({
       <Row className="day-balance-row">
         {amountDayBalance > 0 ? (
           <>
-            <img src={upIcon} />
-            <Text className="positive-balance">{amountDayBalance}</Text>
+            <img src={upIcon} alt="up-icon" />
+            <Text className="positive-balance" darkMode={darkMode}>
+              {amountDayBalance}
+            </Text>
           </>
         ) : (
           <>
-            <img src={downIcon} />
-            <Text className="negative-balance">
+            <img src={downIcon} alt="down-icon" />
+            <Text className="negative-balance" darkMode={darkMode}>
               {Math.abs(amountDayBalance)} Today
             </Text>
           </>
