@@ -51,7 +51,7 @@ const Home: React.FC = () => {
         Overview - Today
       </Title>
 
-      <Row className="home-card-list">
+      <Row className="home-card-list-grid">
         {informationList.map((information) => (
           <InformationCard {...information} darkMode={darkMode} />
         ))}

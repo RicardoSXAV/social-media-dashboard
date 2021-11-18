@@ -52,6 +52,22 @@ export const HomeContainer = styled.div<DarkModeProps>`
     width: 100%;
     padding: 3rem 0;
   }
+
+  .home-card-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 240px);
+    grid-gap: 1.5rem;
+    justify-content: space-between;
+    align-content: flex-start;
+
+    width: 100%;
+    padding: 3rem 0;
+
+    @media (max-width: 568px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 `;
 
 export const Row = styled.div`
