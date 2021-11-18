@@ -8,6 +8,7 @@ import { COLORS } from "../constants/colors";
 
 export const socialMediaList = [
   {
+    id: "facebook",
     icon: facebookIcon,
     color: COLORS.facebook,
     displayName: "@nathanf",
@@ -16,6 +17,7 @@ export const socialMediaList = [
     amountDayBalance: 12,
   },
   {
+    id: "twitter",
     icon: twitterIcon,
     color: COLORS.twitter,
     displayName: "@nathanf",
@@ -24,6 +26,7 @@ export const socialMediaList = [
     amountDayBalance: 99,
   },
   {
+    id: "instagram",
     icon: instagramIcon,
     color: COLORS.instagram,
     displayName: "@realnathanf",
@@ -32,6 +35,7 @@ export const socialMediaList = [
     amountDayBalance: 1099,
   },
   {
+    id: "youtube",
     icon: youtubeIcon,
     color: COLORS.youtube,
     displayName: "Nathan F.",

@@ -2,6 +2,7 @@ import { Text, Title } from "../../styles/TextStyles";
 import { Divider, HomeContainer, Row } from "./styles";
 
 import { useTheme } from "../../contexts/ThemeContext";
+import useLocalStorage from "../../hooks/useLocalStorage";
 import { informationList, socialMediaList } from "../../data/socialMedia";
 
 import Toggle from "../../components/Toggle";
@@ -10,6 +11,8 @@ import InformationCard from "../../components/InformationCard";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Home: React.FC = () => {
+  const [cardList, setCardList] = useLocalStorage(socialMediaList, "cardList");
+
   const { darkMode, setDarkMode } = useTheme();
   const { width } = useWindowDimensions();
 
@@ -34,8 +37,13 @@ const Home: React.FC = () => {
       {width > 568 && <Text darkMode={darkMode}>Total Followers: 23,004</Text>}
 
       <Row className="home-card-list">
-        {socialMediaList.map((socialMedia) => (
-          <SocialMediaCard {...socialMedia} darkMode={darkMode} />
+        {cardList.map((socialMedia: any) => (
+          <SocialMediaCard
+            {...socialMedia}
+            cardList={cardList}
+            setCardList={setCardList}
+            darkMode={darkMode}
+          />
         ))}
       </Row>
 
