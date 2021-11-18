@@ -1,6 +1,6 @@
 # Social Media Dashboard
 
-* Foi implementada a feature de arrastar o cartão, mas não está 100% funcional. Existem movimentos em que é preciso atualizar a página.
+* Foi implementada a feature de drag-and-drop, mas não está 100% funcional. Existem movimentos em que é preciso atualizar a página.
 
 ## Rodando a aplicação
 
